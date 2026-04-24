@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理员后台 - 高二五班</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="admin-container">
+    <div id="loginBox">
+        <h2>管理员登录</h2>
+        <input type="password" id="adminPwd" placeholder="管理员密码">
+        <button onclick="adminLogin()">登录后台</button>
+    </div>
+
+    <div id="adminPanel" style="display:none;">
+        <h3>📢 通知广播（核心）</h3>
+        <select id="broadTarget">
+            <option value="all">全部教室</option>
+            <option value="class5">高二五班</option>
+        </select>
+        <select id="broadLevel">
+            <option value="normal">常规 - 课后播报</option>
+            <option value="urgent">紧急 - 立即播报</option>
+        </select>
+        <textarea id="broadText" placeholder="广播内容"></textarea>
+        <button onclick="sendBroadcast()">发送广播</button>
+
+        <h3>📡 广播回执</h3>
+        <div id="receiptLog"></div>
+
+        <hr>
+        <h3>⭐ 置顶通知</h3>
+        <textarea id="topNoticeText"></textarea>
+        <button onclick="pushTopNotice()">设置置顶</button>
+        <button onclick="clearTopNotice()">取消置顶</button>
+
+        <h3>📝 普通通知</h3>
+        <textarea id="noticeText"></textarea>
+        <button onclick="pushNotice()">发布通知</button>
+
+        <h3>📖 作业发布</h3>
+        <textarea id="homeworkText"></textarea>
+        <button onclick="pushHomework()">发布作业</button>
+
+        <hr>
+        <button onclick="logoutAdmin()">退出登录</button>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

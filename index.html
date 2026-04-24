@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高二五班 - 通知广播系统</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="accessLock" class="lock-wrap">
+    <div class="lock-box animate-fade">
+        <h3>班级私密入口</h3>
+        <input type="password" id="accessPwd" placeholder="输入访问密码">
+        <button onclick="checkAccess()">进入系统</button>
+    </div>
+</div>
+
+<div id="mainWrap" style="display:none;">
+    <header class="top-bar animate-down">
+        <div class="top-left">
+            <img id="logoImg" src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/7974dd1295534e3e8385fbd49f297d58.webp" alt="Logo">
+            <div>
+                <h1 id="className">北二外成都附中 · 高二五班</h1>
+                <span id="weekInfo">本周：第1周</span>
+            </div>
+        </div>
+        <div class="top-right">
+            <span id="countdown">距离假期：计算中…</span>
+            <span id="weatherInfo">加载天气…</span>
+            <button id="themeBtn" onclick="toggleTheme()">切换主题</button>
+            <a href="admin.html" class="admin-btn">管理后台</a>
+        </div>
+    </header>
+
+    <div id="broadcastModal" class="alert-modal">
+        <div class="alert-content" id="broadcastBox">
+            <h2 id="broadTitle">通知广播</h2>
+            <div id="broadContent"></div>
+            <button onclick="confirmBroadcast()">确认已读</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card time-count-card animate-card">
+            <h2>⏱️ 校园实时倒计时</h2>
+            <div id="schoolTimer"></div>
+        </div>
+
+        <div id="topNoticeWrap" class="card top-notice-card animate-card" style="display:none;">
+            <h2>⭐ 置顶重要通知</h2>
+            <div id="topNotice"></div>
+        </div>
+
+        <div class="card notice-card animate-card">
+            <h2>📢 最新公告</h2>
+            <div id="latestNotice"></div>
+        </div>
+
+        <div class="card homework-card animate-card">
+            <h2>📖 今日作业专区</h2>
+            <div id="homeworkList"></div>
+        </div>
+
+        <div class="card time-card animate-card">
+            <h2>⏰ 作息时间表</h2>
+            <div id="timeTable"></div>
+        </div>
+
+        <div class="card schedule-card animate-card">
+            <h2>📚 本周课表</h2>
+            <div id="scheduleTable"></div>
+        </div>
+
+        <div class="card exam-card animate-card">
+            <h2>📝 考试倒计时</h2>
+            <div id="examCountdown"></div>
+        </div>
+
+        <div class="card history-card animate-card">
+            <h2>📜 历史通知 & 广播记录</h2>
+            <div id="historyList"></div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
