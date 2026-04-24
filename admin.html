@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusNotifier - 管理后台</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="admin-container">
+    <div id="loginBox">
+        <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/7974dd1295534e3e8385fbd49f297d58.webp" class="login-logo" alt="Logo">
+        <h2>CampusNotifier</h2>
+        <p>管理员登录</p>
+        <input type="password" id="adminPwd" placeholder="管理员密码">
+        <button onclick="adminLogin()">登录</button>
+    </div>
+
+    <div id="adminPanel" style="display:none;">
+        <h3>📢 通知广播（核心）</h3>
+        <select id="broadTarget">
+            <option value="all">全部教室</option>
+            <option value="class5">高二五班</option>
+        </select>
+        <select id="broadLevel">
+            <option value="normal">常规 - 下课后播报</option>
+            <option value="urgent">紧急 - 立即播报</option>
+        </select>
+        <textarea id="broadText" placeholder="广播内容"></textarea>
+        <button onclick="sendBroadcast()">发送广播</button>
+
+        <hr>
+        <h3>📝 普通通知</h3>
+        <textarea id="noticeText"></textarea>
+        <button onclick="pushNotice()">发布通知</button>
+
+        <h3>📖 作业发布</h3>
+        <textarea id="homeworkText"></textarea>
+        <button onclick="pushHomework()">发布作业</button>
+
+        <hr>
+        <button onclick="logoutAdmin()">退出登录</button>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

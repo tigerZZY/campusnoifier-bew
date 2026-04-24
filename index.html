@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusNotifier</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 官方同款登录页 -->
+<div id="accessLock" class="lock-wrap">
+    <div class="lock-box">
+        <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/7974dd1295534e3e8385fbd49f297d58.webp" class="login-logo" alt="Logo">
+        <h2>CampusNotifier</h2>
+        <p>北二外成都附中</p>
+        <input type="password" id="accessPwd" placeholder="输入访问密码">
+        <button onclick="checkAccess()">登录</button>
+    </div>
+</div>
+
+<div id="mainWrap" style="display:none;">
+    <header class="top-bar">
+        <div class="top-left">
+            <img id="logoImg" src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/7974dd1295534e3e8385fbd49f297d58.webp" alt="Logo">
+            <div>
+                <h1>CampusNotifier</h1>
+                <span>北二外成都附中 · 高二五班</span>
+            </div>
+        </div>
+        <div class="top-right">
+            <span id="weekInfo">本周：计算中…</span>
+            <span id="sysStatus">已连接</span>
+            <a href="admin.html" class="admin-btn">管理后台</a>
+        </div>
+    </header>
+
+    <!-- 官方同款紧急弹窗 -->
+    <div id="broadcastModal" class="alert-modal">
+        <div class="alert-content">
+            <h2 id="broadTitle">⚠️ 紧急通知</h2>
+            <div id="broadContent"></div>
+            <button onclick="confirmBroadcast()">确认已收到</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card notice-card">
+            <h2>📢 通知广播</h2>
+            <div id="latestNotice"></div>
+        </div>
+
+        <div class="card time-card">
+            <h2>⏰ 作息时间表</h2>
+            <div id="timeTable"></div>
+        </div>
+
+        <div class="card schedule-card">
+            <h2>📚 课程表</h2>
+            <div id="scheduleTable"></div>
+        </div>
+
+        <div class="card sys-card">
+            <h2>🖥️ 系统信息</h2>
+            <div>版本: v1.0.0</div>
+            <div>连接: 已在线</div>
+            <div>班级: 高二五班</div>
+        </div>
+
+        <div class="card homework-card">
+            <h2>📖 今日作业</h2>
+            <div id="homeworkList"></div>
+        </div>
+
+        <div class="card count-card">
+            <h2>⏱️ 倒计时</h2>
+            <div id="schoolTimer"></div>
+            <div id="countdown"></div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
